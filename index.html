@@ -1,176 +1,98 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>개인 홈페이지</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 800px;
-            width: 100%;
-            padding: 60px 40px;
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            margin: 0 auto 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 60px;
-            font-weight: bold;
-        }
-
-        h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .title {
-            color: #667eea;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .bio {
-            color: #666;
-            font-size: 1em;
-            line-height: 1.8;
-            margin-bottom: 40px;
-        }
-
-        .skills {
-            background: #f8f9ff;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            text-align: left;
-        }
-
-        .skills h2 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-
-        .skill-tag {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            margin: 5px;
-            font-size: 0.9em;
-        }
-
-        .links {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .link-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            font-weight: 500;
-        }
-
-        .link-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
-        }
-
-        .footer {
-            color: #999;
-            font-size: 0.9em;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 40px 25px;
-            }
-
-            h1 {
-                font-size: 2em;
-            }
-
-            .title {
-                font-size: 1em;
-            }
-
-            .skills {
-                text-align: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>KM Chae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.7;
+      color: #222;
+    }
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+    section {
+      max-width: 800px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+    h1 { font-size: 42px; }
+    h2 { margin-bottom: 20px; }
+    .job { margin-bottom: 30px; }
+    a { color: #0077cc; text-decoration: none; }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="profile-img">👤</div>
-        
-        <h1>이름을 입력하세요</h1>
-        <div class="title">직업 / 직함을 입력하세요</div>
-        
-        <p class="bio">
-            자신에 대한 간단한 소개를 작성하세요.
-            <br>
-            이곳에 당신의 경험, 관심사, 목표 등을 자유롭게 표현해보세요.
-        </p>
 
-        <div class="skills">
-            <h2>📚 기술 & 스킬</h2>
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">CSS</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Git</span>
-        </div>
+<header>
+  <h1>KM Chae</h1>
+  <p>콘텐츠 플랫폼 · 방송 시스템 · 유튜브 운영</p>
+</header>
 
-        <div class="links">
-            <a href="https://github.com/camnara" class="link-btn">GitHub</a>
-            <a href="mailto:your-email@example.com" class="link-btn">Email</a>
-            <a href="#" class="link-btn">LinkedIn</a>
-            <a href="#" class="link-btn">블로그</a>
-        </div>
+<section>
+  <h2>About</h2>
+  <p>
+    방송 PD로 커리어를 시작해 콘텐츠 제작과 라이브 방송 운영을 경험했고,
+    이후 IT 서비스 기획과 플랫폼 운영을 거쳐 현재는 유튜브 콘텐츠를 총괄하고 있습니다.
+    <br><br>
+    콘텐츠, 플랫폼, 운영을 연결하는 일을 합니다.
+  </p>
+</section>
 
-        <div class="footer">
-            <p>© 2026 All Rights Reserved</p>
-        </div>
-    </div>
+<section>
+  <h2>Experience</h2>
+
+  <div class="job">
+    <strong>삼프로TV | 콘텐츠 제작실 팀장</strong>
+    <p>유튜브 콘텐츠 총괄, 라이브 방송 기획 및 운영, 채널 성과 분석</p>
+  </div>
+
+  <div class="job">
+    <strong>중앙일보 S | 디지털지원팀 팀장</strong>
+    <p>웹사이트 운영, 콘텐츠 유통, 네이버/카카오 뉴스 제휴</p>
+  </div>
+
+  <div class="job">
+    <strong>그립컴퍼니 | 서비스 기획 / 파트너 전략</strong>
+    <p>UX 개선, 제휴 비즈니스, 라이브커머스 운영</p>
+  </div>
+
+  <div class="job">
+    <strong>크몽 | 카테고리 PM</strong>
+    <p>서비스 성장 (1.5억 → 11억), 콘텐츠 및 커뮤니티 운영</p>
+  </div>
+
+</section>
+
+<section>
+  <h2>Strength</h2>
+  <p>
+    콘텐츠 제작 · 플랫폼 운영 · 제휴 비즈니스를 동시에 경험했습니다.<br>
+    라이브 방송부터 서비스 기획까지 전 과정을 이해하고 있습니다.
+  </p>
+</section>
+
+<section>
+  <h2>Writing</h2>
+  <p>조직, 커뮤니케이션, 일하는 방식에 대한 글을 씁니다.</p>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+  <p><a href="resume.pdf" download>PDF 이력서 다운로드</a></p>
+</section>
+
 </body>
 </html>
