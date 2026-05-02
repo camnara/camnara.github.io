@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>KM Chae</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #222;
+      background: #fff;
+    }
+
+    .lang-switch {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 100;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      color: #111;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    header {
+      min-height: 58vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 48px 20px;
+      background: linear-gradient(135deg, #111, #2d2d2d);
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      margin: 0 0 12px;
+      letter-spacing: -0.04em;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 20px;
+      color: #ccc;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.8s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #eee;
+    }
+
+    nav .inner {
+      max-width: 860px;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 14px 20px;
+      font-size: 15px;
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    section {
+      max-width: 860px;
+      margin: auto;
+      padding: 80px 20px;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 30px;
+      margin: 0 0 24px;
+      letter-spacing: -0.03em;
+    }
+
+    p { color: #555; }
+
+    .lead {
+      font-size: 21px;
+      color: #333;
+      letter-spacing: -0.02em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #f7f7f7;
+      padding: 26px;
+      border-radius: 18px;
+      margin-bottom: 18px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 38px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+      color: #111;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    details {
+      margin-top: 20px;
+      background: #fafafa;
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 18px;
+      background: #111;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 15px;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      background: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 44px 20px;
+      font-size: 14px;
+      color: #888;
+      border-top: 1px solid #eee;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      header { min-height: 52vh; }
+      nav .inner {
+        gap: 14px;
+        font-size: 14px;
+      }
+      section { padding: 56px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="index.html" class="lang-switch">KR</a>
+
+<header>
+  <h1>KM Chae</h1>
+  <p>Connecting Content, Platforms, and Operations</p>
+</header>
+
+<nav>
+  <div class="inner">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#strength">Strength</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section id="about">
+  <h2>About</h2>
+  <p class="lead">
+    I began my career as a broadcast producer, gaining hands-on experience in live programming,
+    news production, and digital video content. I later expanded into IT service planning,
+    platform operations, and partnership business, and now lead YouTube content production.
+  </p>
+  <p>
+    My strength lies in connecting content, platform operations, service improvement,
+    and business partnerships into practical systems that actually work.
+  </p>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="card">
+    <div class="meta">Jan 2026 – Present</div>
+    <strong>3PRO TV | Head of Content Production</strong>
+    <p>
+      Oversee YouTube content production, live broadcast planning and operations,
+      producer management, channel performance analysis, and partner event planning.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="meta">May 2024 – Dec 2025</div>
+    <strong>JoongAng Ilbo S | Digital Operations Team Lead</strong>
+    <p>
+      Led internal digital operations including online content production, distribution,
+      review, website planning and maintenance, VoC response, and news partnerships with Naver and Kakao.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="meta">Aug 2022 – May 2024</div>
+    <strong>Grip Company | Partner Strategy / Service Planning & Operations</strong>
+    <p>
+      Managed partner acquisition, onboarding, API-based partnerships, UX research,
+      service policy development, external communication, VoC analysis, and live commerce programming.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="meta">Nov 2018 – Jul 2022</div>
+    <strong>Kmong | Senior Category PM</strong>
+    <p>
+      Managed the video, photography, and audio category; recruited and onboarded experts;
+      planned education programs; analyzed category data and VoC; and grew category transaction volume
+      from KRW 150 million to KRW 1.1 billion.
+    </p>
+  </div>
+
+  <details>
+    <summary>View Earlier Experience</summary>
+
+    <div class="card">
+      <div class="meta">Feb 2015 – May 2018</div>
+      <strong>MBN | Current Affairs Producer</strong>
+      <p>
+        Produced live current affairs programs, studio talk shows, field reports,
+        online video content, and response materials for media-related regulatory bodies.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="meta">Oct 2011 – Jan 2015</div>
+      <strong>KBS Media Tech | Broadcast Producer</strong>
+      <p>
+        Produced daily news and current affairs programs, managed VOD materials,
+        directed special news programs, and created internal training materials.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="meta">Jun 2011 – Sep 2011</div>
+      <strong>Pax TV | Broadcast Producer</strong>
+      <p>
+        Produced daily stock market programs, IR programs, investor education content,
+        and VOD content for online platforms.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="meta">Jul 2010 – May 2011</div>
+      <strong>t-broad / TPNS | Field Reporter</strong>
+      <p>
+        Covered local news in Gyeonggi Province, wrote daily news articles,
+        operated a local news blog, directed special programs, and contributed to channel launch task-force materials.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="meta">Apr 2001 – Mar 2007</div>
+      <strong>Seoul Audio | Founder</strong>
+      <p>
+        Founded and operated an online and offline consumer electronics business,
+        handling imported audio and camcorder products, e-commerce operations, and a retail experience store.
+      </p>
+    </div>
+  </details>
+</section>
+
+<section id="strength">
+  <h2>Strength</h2>
+
+  <div class="grid">
+    <div class="card">
+      <strong>Content</strong>
+      <p>
+        Broadcast production, YouTube content operations, live programming,
+        field production, and video content planning.
+      </p>
+    </div>
+
+    <div class="card">
+      <strong>Platform</strong>
+      <p>
+        Website operations, IT service planning, UX improvement, VoC analysis,
+        content distribution, and operational policy design.
+      </p>
+    </div>
+
+    <div class="card">
+      <strong>Business</strong>
+      <p>
+        Partnership planning, partner onboarding, B2B collaboration,
+        promotion planning, and partner communication.
+      </p>
+    </div>
+  </div>
+
+  <p>
+    I approach content, platforms, and operations as one connected system,
+    and focus on building structures that improve both execution and outcomes.
+  </p>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+  <a href="resume.pdf" class="button" download>Download PDF Resume</a>
+</section>
+
+<footer>
+  © 2026 KM Chae
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>

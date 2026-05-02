@@ -1,222 +1,44 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <title>KM Chae</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
-
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #222;
-      background: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: #333;
     }
-
     header {
-      min-height: 58vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding: 48px 20px;
-      background: linear-gradient(135deg, #111, #2d2d2d);
-      color: #fff;
-    }
-
-    header h1 {
-      font-size: clamp(42px, 7vw, 72px);
-      margin: 0 0 12px;
-      letter-spacing: -0.04em;
-      opacity: 0;
-      transform: translateY(18px);
-      animation: fadeUp 0.8s ease forwards;
-    }
-
-    header p {
-      margin: 0;
-      font-size: 20px;
-      color: #ccc;
-      opacity: 0;
-      transform: translateY(18px);
-      animation: fadeUp 0.8s ease forwards;
-      animation-delay: 0.2s;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255,255,255,0.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #eee;
-    }
-
-    nav .inner {
-      max-width: 860px;
-      margin: auto;
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      padding: 14px 20px;
-      font-size: 15px;
-    }
-
-    nav a {
-      color: #333;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    section {
-      max-width: 860px;
-      margin: auto;
-      padding: 80px 20px;
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h2 {
-      font-size: 30px;
-      margin: 0 0 24px;
-      letter-spacing: -0.03em;
-    }
-
-    p {
-      color: #555;
-    }
-
-    .lead {
-      font-size: 21px;
-      color: #333;
-      letter-spacing: -0.02em;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: #f7f7f7;
-      padding: 26px;
-      border-radius: 18px;
-      margin-bottom: 18px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 38px rgba(0,0,0,0.08);
-      background: #fff;
-    }
-
-    .card strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 18px;
-      color: #111;
-    }
-
-    .meta {
-      font-size: 14px;
-      color: #888;
-      margin-bottom: 8px;
-    }
-
-    details {
-      margin-top: 20px;
-      background: #fafafa;
-      border-radius: 18px;
-      padding: 20px;
-    }
-
-    summary {
-      cursor: pointer;
-      font-weight: 700;
-      color: #111;
-    }
-
-    .tag {
-      display: inline-block;
-      margin: 0 8px 8px 0;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: #f1f1f1;
-      color: #333;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 12px 18px;
       background: #111;
       color: #fff;
-      border-radius: 10px;
-      font-size: 15px;
+      text-align: center;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 { font-size: 48px; margin-bottom: 10px; }
+    h2 { margin-bottom: 20px; }
+    .projects a {
+      display: block;
+      margin-bottom: 10px;
       text-decoration: none;
-      transition: transform 0.2s ease, background 0.2s ease;
+      color: #0077cc;
     }
-
-    .button:hover {
-      transform: translateY(-3px);
-      background: #333;
-    }
-
     footer {
       text-align: center;
-      padding: 44px 20px;
+      padding: 30px;
       font-size: 14px;
-      color: #888;
-      border-top: 1px solid #eee;
-    }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 640px) {
-      body {
-        font-size: 16px;
-      }
-
-      header {
-        min-height: 52vh;
-      }
-
-      nav .inner {
-        gap: 14px;
-        font-size: 14px;
-      }
-
-      section {
-        padding: 56px 20px;
-      }
+      color: #777;
     }
   </style>
 </head>
@@ -224,143 +46,33 @@
 <body>
 
 <header>
-  <h1>채경민</h1>
-  <p>콘텐츠와 시스템을 연결하는 사람</p>
+  <h1>홍길동</h1>
+  <p>콘텐츠 플랫폼 & 방송 시스템 운영자</p>
 </header>
 
-<nav>
-  <div class="inner">
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#strength">Strength</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
-<section id="about">
+<section>
   <h2>About</h2>
-  <p class="lead">
-    방송 PD로 커리어를 시작해 라이브 방송과 콘텐츠 제작을 경험했고,
-    이후 IT 서비스 기획과 플랫폼 운영을 거쳐 현재는 유튜브 콘텐츠를 총괄하고 있습니다.
-  </p>
   <p>
-    콘텐츠 제작, 플랫폼 운영, 서비스 개선, 제휴 비즈니스까지 연결해
-    실제로 작동하는 운영 구조를 만드는 일에 강점이 있습니다.
+    방송 시스템과 콘텐츠 플랫폼을 운영하는 일을 하고 있습니다.
+    라이브 스트리밍, 유튜브, 영상 제작 환경 구축에 관심이 많습니다.
   </p>
 </section>
 
-<section id="experience">
-  <h2>Experience</h2>
-
-  <div class="card">
-    <div class="meta">2026.01 – 현재</div>
-    <strong>삼프로TV | 콘텐츠제작실 팀장</strong>
-    <p>유튜브 콘텐츠 총괄, 라이브 방송 기획 및 운영, 제작 PD 관리, 채널 성과 분석, 파트너사 이벤트 기획 및 실행</p>
-  </div>
-
-  <div class="card">
-    <div class="meta">2024.05 – 2025.12</div>
-    <strong>중앙일보 S | 디지털지원팀 팀장</strong>
-    <p>온라인 콘텐츠 제작·유통·검수, 웹사이트 기획·운영·유지보수, VoC 대응, 네이버·카카오 뉴스 제휴</p>
-  </div>
-
-  <div class="card">
-    <div class="meta">2022.08 – 2024.05</div>
-    <strong>그립컴퍼니 | 파트너전략 / 서비스기획운영</strong>
-    <p>신규 파트너사 영입, API 연동 제휴, UX 리서치, 서비스 정책 수립, 라이브커머스 편성 및 운영</p>
-  </div>
-
-  <div class="card">
-    <div class="meta">2018.11 – 2022.07</div>
-    <strong>크몽 | 선임 카테고리 PM</strong>
-    <p>영상·사진·음향 카테고리 운영, 전문가 온보딩, 교육 프로그램 운영, 카테고리 거래액 1.5억 → 11억 성장</p>
-  </div>
-
-  <details>
-    <summary>이전 경력 더 보기</summary>
-
-    <div class="card">
-      <div class="meta">2015.02 – 2018.05</div>
-      <strong>MBN | 시사제작부 PD</strong>
-      <p>생방송 시사 프로그램 연출, 현장 취재, 온라인 콘텐츠 제작, 대관 대응</p>
-    </div>
-
-    <div class="card">
-      <div class="meta">2011.10 – 2015.01</div>
-      <strong>KBS 미디어텍 | 방송제작부 PD</strong>
-      <p>뉴스·시사 프로그램 제작, VOD 소재 관리, 특집 보도 프로그램 연출, 사내 교육 자료 제작</p>
-    </div>
-
-    <div class="card">
-      <div class="meta">2011.06 – 2011.09</div>
-      <strong>팍스TV | 방송제작부 PD</strong>
-      <p>증권 시황 프로그램 제작, IR 프로그램 연출, VOD 콘텐츠 기획 및 운영</p>
-    </div>
-
-    <div class="card">
-      <div class="meta">2010.07 – 2011.05</div>
-      <strong>티브로드 | 경기보도팀 취재기자</strong>
-      <p>지역 뉴스 취재 및 기사 작성, 뉴스 블로그 운영, 특집 프로그램 연출, 종합편성채널 TF 자료 작성</p>
-    </div>
-
-    <div class="card">
-      <div class="meta">2001.04 – 2007.03</div>
-      <strong>서울오디오 | 창업</strong>
-      <p>수입가전 온라인 총판, 쇼핑몰 운영, 오프라인 체험 매장 운영</p>
-    </div>
-  </details>
+<section class="projects">
+  <h2>Work</h2>
+  <a href="#">유튜브 채널</a>
+  <a href="#">프로젝트 1</a>
+  <a href="#">프로젝트 2</a>
 </section>
 
-<section id="strength">
-  <h2>Strength</h2>
-
-  <div class="grid">
-    <div class="card">
-      <strong>Content</strong>
-      <p>방송 제작, 유튜브 콘텐츠 운영, 라이브 방송 기획과 현장 운영 경험</p>
-    </div>
-
-    <div class="card">
-      <strong>Platform</strong>
-      <p>웹사이트 운영, 서비스 기획, UX 개선, VoC 분석과 운영 정책 수립</p>
-    </div>
-
-    <div class="card">
-      <strong>Business</strong>
-      <p>기업 제휴, 파트너사 관리, 온보딩 프로세스 운영, 이벤트 기획</p>
-    </div>
-  </div>
-
-  <p>
-    방송과 플랫폼, 콘텐츠와 운영을 따로 보지 않고 하나의 흐름으로 연결해 문제를 해결합니다.
-  </p>
-</section>
-
-<section id="contact">
+<section>
   <h2>Contact</h2>
   <p>Email: your@email.com</p>
-  <a href="resume.pdf" class="button" download>PDF 이력서 다운로드</a>
 </section>
 
 <footer>
-  © 2026 KM Chae
+  © 2026 Your Name
 </footer>
-
-<script>
-  const sections = document.querySelectorAll('section');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, {
-    threshold: 0.15
-  });
-
-  sections.forEach(section => observer.observe(section));
-</script>
 
 </body>
 </html>
