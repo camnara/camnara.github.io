@@ -2,43 +2,163 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>My Portfolio</title>
+  <title>KM Chae</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.6;
-      color: #333;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #222;
     }
+
     header {
-      height: 100vh;
+      min-height: 55vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: #111;
+      background: linear-gradient(135deg, #111, #333);
       color: #fff;
       text-align: center;
     }
-    section {
-      padding: 60px 20px;
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    header p {
+      color: #ccc;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #eee;
+    }
+
+    nav .inner {
       max-width: 800px;
       margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 14px;
     }
-    h1 { font-size: 48px; margin-bottom: 10px; }
-    h2 { margin-bottom: 20px; }
-    .projects a {
-      display: block;
-      margin-bottom: 10px;
+
+    nav a {
       text-decoration: none;
-      color: #0077cc;
+      color: #333;
+      font-weight: 600;
     }
+
+    .lang {
+      margin-left: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #111;
+      color: #fff !important;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section {
+      max-width: 800px;
+      margin: auto;
+      padding: 80px 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #555;
+    }
+
+    .card {
+      background: #f7f7f7;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      transition: all 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 5px;
+    }
+
+    details {
+      margin-top: 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: #111;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 40px;
+      color: #888;
       font-size: 14px;
-      color: #777;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -46,33 +166,115 @@
 <body>
 
 <header>
-  <h1>홍길동</h1>
-  <p>콘텐츠 플랫폼 & 방송 시스템 운영자</p>
+  <h1>KM Chae</h1>
+  <p>콘텐츠와 시스템을 연결하는 사람</p>
 </header>
 
-<section>
+<nav>
+  <div class="inner">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#strength">Strength</a>
+    <a href="#contact">Contact</a>
+    <a href="en.html" class="lang">EN</a>
+  </div>
+</nav>
+
+<section id="about">
   <h2>About</h2>
   <p>
-    방송 시스템과 콘텐츠 플랫폼을 운영하는 일을 하고 있습니다.
-    라이브 스트리밍, 유튜브, 영상 제작 환경 구축에 관심이 많습니다.
+    방송 PD로 커리어를 시작해 콘텐츠 제작과 라이브 방송 운영을 경험했고,
+    이후 IT 서비스 기획과 플랫폼 운영을 거쳐 현재는 유튜브 콘텐츠를 총괄하고 있습니다.
   </p>
 </section>
 
-<section class="projects">
-  <h2>Work</h2>
-  <a href="#">유튜브 채널</a>
-  <a href="#">프로젝트 1</a>
-  <a href="#">프로젝트 2</a>
+<section id="experience">
+  <h2>Experience</h2>
+
+  <div class="card">
+    <div class="meta">2026 ~ 현재</div>
+    <strong>삼프로TV | 콘텐츠 제작실 팀장</strong>
+    <p>유튜브 콘텐츠 총괄 및 라이브 방송 운영</p>
+  </div>
+
+  <div class="card">
+    <div class="meta">2024 ~ 2025</div>
+    <strong>중앙일보 S | 디지털지원팀 팀장</strong>
+    <p>웹사이트 운영 및 콘텐츠 유통, 제휴</p>
+  </div>
+
+  <div class="card">
+    <div class="meta">2022 ~ 2024</div>
+    <strong>그립컴퍼니</strong>
+    <p>서비스 기획 및 제휴, 라이브커머스 운영</p>
+  </div>
+
+  <div class="card">
+    <div class="meta">2018 ~ 2022</div>
+    <strong>크몽</strong>
+    <p>카테고리 성장 (1.5억 → 11억)</p>
+  </div>
+
+  <details>
+    <summary>이전 경력 더 보기</summary>
+
+    <div class="card">
+      <strong>MBN / KBS / 팍스TV / 티브로드</strong>
+      <p>방송 제작 및 뉴스 취재</p>
+    </div>
+
+    <div class="card">
+      <strong>서울오디오 (창업)</strong>
+      <p>온라인 쇼핑몰 및 오프라인 매장 운영</p>
+    </div>
+
+  </details>
 </section>
 
-<section>
+<section id="strength">
+  <h2>Strength</h2>
+
+  <div class="grid">
+    <div class="card">
+      <strong>Content</strong>
+      <p>방송 및 유튜브 콘텐츠 제작</p>
+    </div>
+
+    <div class="card">
+      <strong>Platform</strong>
+      <p>서비스 기획 및 운영</p>
+    </div>
+
+    <div class="card">
+      <strong>Business</strong>
+      <p>제휴 및 파트너십 운영</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
   <h2>Contact</h2>
   <p>Email: your@email.com</p>
+  <a href="resume.pdf" class="button" download>PDF 이력서 다운로드</a>
 </section>
 
 <footer>
-  © 2026 Your Name
+  © 2026 KM Chae
 </footer>
+
+<script>
+  const sections = document.querySelectorAll('section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
 
 </body>
 </html>
