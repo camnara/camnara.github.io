@@ -1,39 +1,105 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <meta charset="UTF-8">
   <title>KM Chae</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 폰트 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+
   <style>
     body {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
-}
-    body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.7;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 18px;
+      line-height: 1.8;
       color: #222;
+      background: #fff;
     }
+
     header {
       height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: #111;
+      background: linear-gradient(135deg, #111, #333);
       color: #fff;
       text-align: center;
+      padding: 20px;
     }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 20px;
+      color: #ccc;
+    }
+
     section {
-      max-width: 800px;
+      max-width: 720px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 80px 20px;
     }
-    h1 { font-size: 42px; }
-    h2 { margin-bottom: 20px; }
-    .job { margin-bottom: 30px; }
-    a { color: #0077cc; text-decoration: none; }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #555;
+    }
+
+    .card {
+      background: #f7f7f7;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+      color: #111;
+    }
+
+    details {
+      margin-top: 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 16px;
+      background: #111;
+      color: #fff;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      font-size: 14px;
+      color: #888;
+    }
   </style>
 </head>
 
@@ -57,25 +123,56 @@
 <section>
   <h2>Experience</h2>
 
-  <div class="job">
+  <div class="card">
     <strong>삼프로TV | 콘텐츠 제작실 팀장</strong>
     <p>유튜브 콘텐츠 총괄, 라이브 방송 기획 및 운영, 채널 성과 분석</p>
   </div>
 
-  <div class="job">
+  <div class="card">
     <strong>중앙일보 S | 디지털지원팀 팀장</strong>
     <p>웹사이트 운영, 콘텐츠 유통, 네이버/카카오 뉴스 제휴</p>
   </div>
 
-  <div class="job">
+  <div class="card">
     <strong>그립컴퍼니 | 서비스 기획 / 파트너 전략</strong>
     <p>UX 개선, 제휴 비즈니스, 라이브커머스 운영</p>
   </div>
 
-  <div class="job">
+  <div class="card">
     <strong>크몽 | 카테고리 PM</strong>
-    <p>서비스 성장 (1.5억 → 11억), 콘텐츠 및 커뮤니티 운영</p>
+    <p>카테고리 성장 (1.5억 → 11억), 콘텐츠 및 커뮤니티 운영</p>
   </div>
+
+  <!-- 과거 경력 -->
+  <details>
+    <summary>이전 경력 더 보기</summary>
+
+    <div class="card">
+      <strong>MBN | 시사제작부 PD</strong>
+      <p>생방송 시사 프로그램 연출 및 제작, 주요 이슈 현장 취재</p>
+    </div>
+
+    <div class="card">
+      <strong>KBS 미디어텍 | PD</strong>
+      <p>뉴스 및 시사 프로그램 제작, 사내 교육 콘텐츠 제작</p>
+    </div>
+
+    <div class="card">
+      <strong>팍스TV | PD</strong>
+      <p>증권 시황 프로그램 제작 및 VOD 운영</p>
+    </div>
+
+    <div class="card">
+      <strong>티브로드 | 취재기자</strong>
+      <p>경기 지역 뉴스 취재 및 기사 작성</p>
+    </div>
+
+    <div class="card">
+      <strong>서울오디오 | 창업</strong>
+      <p>온라인 쇼핑몰 및 오프라인 매장 운영</p>
+    </div>
+
+  </details>
 
 </section>
 
@@ -89,14 +186,31 @@
 
 <section>
   <h2>Writing</h2>
-  <p>조직, 커뮤니케이션, 일하는 방식에 대한 글을 씁니다.</p>
+
+  <div class="card">
+    <strong>콜포비아</strong>
+    <p>전화 한 통이 어려워진 조직의 이야기</p>
+  </div>
+
+  <div class="card">
+    <strong>회의를 좋아하는 사람들</strong>
+    <p>결정을 미루기 위한 회의</p>
+  </div>
+
 </section>
 
 <section>
   <h2>Contact</h2>
   <p>Email: your@email.com</p>
-  <p><a href="resume.pdf" download>PDF 이력서 다운로드</a></p>
+
+  <a href="resume.pdf" class="button" download>
+    PDF 이력서 다운로드
+  </a>
 </section>
+
+<footer>
+  © 2026 KM Chae
+</footer>
 
 </body>
 </html>
